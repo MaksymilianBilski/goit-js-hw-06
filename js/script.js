@@ -40,3 +40,62 @@ for (let i = 0; i <= ingredients.length - 1; i++) {
 }
 
 console.log(list);
+
+//ZADANIE 3
+// DODAĆ CSSY !!!!
+// const images = [
+//   {
+//     url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260",
+//     alt: "White and Black Long Fur Cat",
+//   },
+//   {
+//     url: "https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?dpr=2&h=750&w=1260",
+//     alt: "Orange and White Koi Fish Near Yellow Koi Fish",
+//   },
+//   {
+//     url: "https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?dpr=2&h=750&w=1260",
+//     alt: "Group of Horses Running",
+//   },
+// ];
+// const gallery = document.querySelector(".gallery");
+// images.forEach((number, index) => {
+//   gallery.insertAdjacentHTML(
+//     "afterbegin",
+//     `<li><img src=${number.url}, alt=${number.alt}></img></li>`
+//   );
+// });
+
+//ZADANIE 4
+
+/* const button = document.querySelector("button");
+const incrButton = document.querySelector(`button[data-action="increment"]`);
+const decrButton = document.querySelector(`button[data-action="decrement"]`);
+console.log(incrButton);
+let counterValue = 0;
+incrButton.addEventListener("click", () => {
+  if (incrButton.dataset.action === "increment") {
+    console.log("+1");
+  } else if (decrButton.dataset.action === "decrement") {
+    console.log("-1");
+  }
+}); */
+
+const button = document.querySelector("button");
+const incrButton = document.querySelector(`button[data-action="increment"]`);
+const decrButton = document.querySelector(`button[data-action="decrement"]`);
+const value = document.querySelector("#value");
+let counterValue = 0;
+
+incrButton.addEventListener("click", () => {
+  incrButton.dataset.action === "increment";
+  counterValue += 1;
+  value.innerHTML = `${counterValue}`;
+});
+
+decrButton.addEventListener("click", () => {
+  decrButton.dataset.action === "decrement";
+  counterValue -= 1;
+  value.innerHTML = `${counterValue}`;
+});
+
+console.log(counterValue);
