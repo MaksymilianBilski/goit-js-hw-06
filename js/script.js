@@ -67,6 +67,8 @@ console.log(list);
 
 //ZADANIE 4
 
+// PRÓBA NA IFIE?
+
 /* const button = document.querySelector("button");
 const incrButton = document.querySelector(`button[data-action="increment"]`);
 const decrButton = document.querySelector(`button[data-action="decrement"]`);
@@ -99,3 +101,16 @@ decrButton.addEventListener("click", () => {
 });
 
 console.log(counterValue);
+
+//ZADANIE 5
+const input = document.querySelector("#name-input");
+const output = document.querySelector("#name-output");
+input.addEventListener("input", (event) => {
+  output.textContent = event.currentTarget.value;
+});
+
+//ZADANIE 6
+const input2 = document.querySelector("#validation-input");
+input.addEventListener("click", () => {
+  input.blur();
+});
