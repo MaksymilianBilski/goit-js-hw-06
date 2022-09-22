@@ -1,25 +1,42 @@
-let categoryNumber = 0;
-const body = document.body;
-const list = body.firstElementChild;
-const categories = list.children;
-for (const category of categories) {
-  categoryNumber += 1;
+//ZADANIE 1
+
+let newArr = [];
+let newArr2 = [];
+
+const categories = document.querySelectorAll("h2");
+const category = document.querySelectorAll("h2");
+const elements = document.querySelectorAll(".item ul");
+
+for (const element of category) {
+  newArr.push(element);
 }
-console.log("Number of categories: " + categoryNumber);
-console.log(body);
+for (const element of elements) {
+  const el = element.querySelectorAll("li");
+  newArr2.push(el.length);
+}
+for (let i = 0; i < elements.length; i++) {
+  console.log("Category" + ": " + newArr[i].textContent);
+  console.log("Elements: " + newArr2[i]);
+}
+
+//ZADANIE 2
+
+const ingredients = [
+  "Potatoes",
+  "Mushrooms",
+  "Garlic",
+  "Tomatos",
+  "Herbs",
+  "Condiments",
+];
+
+const list = document.getElementById("ingredients");
+
+for (let i = 0; i <= ingredients.length - 1; i++) {
+  const item = document.createElement("li");
+  item.innerHTML = ingredients[i];
+  item.classList.add("item");
+  list.append(item);
+}
+
 console.log(list);
-
-const tests = document.querySelectorAll("h2");
-const testsNumber = document.querySelectorAll(".item ul");
-
-let arr = 1;
-for (const num of testsNumber) {
-  console.log(num.children);
-  arr += 1;
-}
-console.log(testsNumber);
-console.log(tests);
-for (const test of tests) {
-  console.log("Category: " + test.textContent);
-}
-console.log(arr);
