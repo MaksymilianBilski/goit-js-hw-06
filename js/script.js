@@ -131,3 +131,36 @@ input7.addEventListener(`change`, () => {
 });
 
 //ZADANIE 8
+const form = document.querySelector(".login-form");
+const label = document.querySelector("label");
+const labeltext = label.textContent;
+const inputEmail = document.querySelector(`input[type="email"]`);
+const inputPass = document.querySelector(`input[type="password"]`);
+const formObject = {};
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  if (inputEmail.value === "" || inputPass.value === "") {
+    alert("Proszę wypełnić wszystkie pola!");
+  }
+  const {
+    elements: { email, password },
+  } = event.currentTarget;
+
+  formObject.labeltext = email.value;
+  const { labeltext: labeltext } = formObject;
+  console.log(formObject);
+});
+console.log(formObject);
+
+//ZADANIE 9
+const body = document.querySelector("body");
+const button9 = document.querySelector(".change-color");
+const spanColor = document.querySelector(".color");
+button9.addEventListener("click", () => {
+  body.style.backgroundColor = getRandomHexColor();
+});
+function getRandomHexColor() {
+  return (spanColor.textContent = `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`);
+}
