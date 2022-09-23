@@ -103,14 +103,31 @@ decrButton.addEventListener("click", () => {
 console.log(counterValue);
 
 //ZADANIE 5
-const input = document.querySelector("#name-input");
-const output = document.querySelector("#name-output");
-input.addEventListener("input", (event) => {
-  output.textContent = event.currentTarget.value;
+const input5 = document.querySelector("#name-input");
+const output5 = document.querySelector("#name-output");
+input5.addEventListener("input", (event) => {
+  output5.textContent = event.currentTarget.value;
 });
 
 //ZADANIE 6
-const input2 = document.querySelector("#validation-input");
-input.addEventListener("click", () => {
-  input.blur();
+const input6 = document.querySelector(`#validation-input`);
+input6.style.border = "3px solid #bdbdbd";
+input6.addEventListener("blur", (event) => {
+  if (event.currentTarget.value === "" || event.currentTarget.length !== 6) {
+    event.currentTarget.placeholder = `Please enter ${(event.currentTarget.dataset.length =
+      "6")} symbols`;
+    event.currentTarget.style.borderColor = "#f44336";
+  } else if (event.currentTarget.value.length === 6) {
+    return (event.currentTarget.style.borderColor = "#4caf50");
+  }
 });
+
+//ZADANIE 7
+const input7 = document.querySelector("#font-size-control");
+const text7 = document.querySelector("#text");
+console.log(text7.textContent);
+input7.addEventListener(`change`, () => {
+  text7.style.fontSize = `${input7.value}px`;
+});
+
+//ZADANIE 8
