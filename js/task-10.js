@@ -7,17 +7,21 @@ const buttonSub = document.querySelector(`button[data-destroy]`);
 const input = document.querySelector(`input[type="number"]`);
 
 const createBoxes = (amount) => {
-  amount = input.value;
+  if (amount > 100 || amount < 1) {
+    return;
+  }
   for (let i = 0; i <= amount - 1; i++) {
     const box2 = document.createElement("div");
-    const actualWidth = (box2.style.width = "30px");
-    const actualHeight = (box2.style.height = "30px");
-    box2.style.backgroundColor = `${getRandomHexColor()}`;
+    box2.style.width = `${30 + 10 * i}px`;
+    box2.style.height = `${30 + 10 * i}px`;
+    box2.style.backgroundColor = getRandomHexColor();
     box.append(box2);
-    // const width = Number.parseFloat(actualWidth);
-    // const height = Number.parseFloat(actualHeight);
   }
 };
-buttonAdd.addEventListener("click", createBoxes);
 
-const destroyBoxes = (amount) => {};
+const destroyBoxes = () => {
+  box.innerHTML = "";
+};
+
+buttonAdd.addEventListener("click", () => createBoxes(input.value));
+buttonSub.addEventListener("click", destroyBoxes);
