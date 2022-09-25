@@ -11,9 +11,10 @@ form.addEventListener("submit", (event) => {
   } = event.currentTarget;
   if (email.value === "" || password.value === "") {
     alert("All fields should be filled!");
+  } else if (email.value !== "" || password.value !== "") {
+    returnObj.password = password.value;
+    returnObj.email = email.value;
+    console.log(returnObj);
   }
-  returnObj.password = password.value;
-  returnObj.email = email.value;
-  console.log(returnObj);
   form.reset();
 });
