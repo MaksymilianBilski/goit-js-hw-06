@@ -29,3 +29,14 @@ for (const img of images) {
     }, width=${250}, height=250></img></li>`
   );
 }
+
+//DRUGA METODA
+
+// const gallery = document.querySelector(".gallery");
+// images.forEach(function (value) {
+//   const galleryItem = document.createElement("li");
+//   galleryItem.insertAdjacentHTML("afterbegin", `<img src=${value.url}>`);
+//   console.log(galleryItem);
+//   gallery.append(galleryItem);
+// });
+// console.log(gallery);
