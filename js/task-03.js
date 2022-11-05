@@ -17,16 +17,19 @@ const gallery = document.querySelector(".gallery");
 gallery.style.display = "flex";
 gallery.style.flexDirection = "row";
 gallery.style.justifyContent = "center";
+gallery.style.allignItems = "center";
 gallery.style.gridGap = "170px";
 gallery.style.listStyle = "none";
-gallery.style.border = "3px solid green";
+gallery.style.border = "2px solid green";
+gallery.style.height = "350px";
+gallery.style.backgroundColor = "yellow";
 
 for (const img of images) {
   gallery.insertAdjacentHTML(
     "afterbegin",
-    `<li><img src=${img.url}, alt=${
+    `<li style="height:250px; align-self:center;" ><img src=${img.url}, alt=${
       img.alt
-    }, width=${250}, height=250></img></li>`
+    }, width=${250}, height=250 style="border: 1px solid red;"></img></li>`
   );
 }
 
@@ -40,3 +43,11 @@ for (const img of images) {
 //   gallery.append(galleryItem);
 // });
 // console.log(gallery);
+
+// const gallery = document.querySelector(".gallery");
+// images.map((el) => {
+//   gallery.insertAdjacentHTML(
+//     "afterbegin",
+//     `<img src="${el.url}" alt="${el.alt}" width="360" height="360"><</img>`
+//   );
+// });
